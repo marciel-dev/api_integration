@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  token: MyString
+  inactivated_at: 2025-09-23 21:42:44
+
+two:
+  user: two
+  token: MyString
+  inactivated_at: 2025-09-23 21:42:44

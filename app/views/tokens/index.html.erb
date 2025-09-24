@@ -1,0 +1,27 @@
+<h2>Meus Tokens</h2>
+<%= link_to "Novo Token", tokens_path,  data: { turbo_method: :post }, class: "btn btn-primary mb-3" %>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Token</th>
+      <th>Criado Em</th>
+      <th>Inativado Em</th>
+      <th>Expira Em</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @tokens.each do |token| %>
+      <tr>
+        <td>##################</td>
+        <td><%= l(token.created_at, format: :short) %></td>
+        <td><%= l(token.inactivated_at, format: :short) if token.inactivated_at.present? %></td>
+        <td><%= l(token.expires_at, format: :short) if token.expires_at.present? %></td>
+        <td>
+          <%= link_to "Ver", token_path(token), class: "btn btn-sm btn-outline-info" %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

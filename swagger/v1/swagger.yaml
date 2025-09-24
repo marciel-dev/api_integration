@@ -1,0 +1,37 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+servers:
+- url: http://localhost:3000
+  description: Dev
+- url: https://SEU-APP.onrender.com
+  description: Prod
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+security:
+- bearerAuth: []
+paths:
+  "/api/v1/public_data":
+    get:
+      summary: Lista casos de COVID
+      tags:
+      - CovidCases
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: page
+        in: query
+        description: Número da página
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: sucesso
+        '401':
+          description: não autorizado
