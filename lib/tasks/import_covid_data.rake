@@ -3,10 +3,10 @@ require 'csv'
 namespace :import do
   desc "Importa dados COVID de um CSV"
   task covid: :environment do
-    file_path = ENV['FILE']
+    file_path = 'docs/covid_data.csv'
 
     unless file_path && File.exist?(file_path)
-      puts "Passe o caminho do arquivo: rake import:covid FILE=path/arquivo.csv"
+      puts "Passe o caminho do arquivo na file_path"
       exit
     end
 

@@ -27,7 +27,7 @@ RSpec.configure do |config|
           description: 'Dev'
         },
         {
-          url: 'https://SEU-APP.onrender.com',
+          url: 'https://mbaonrails.onrender.com',
           description: 'Prod'
         }
       ],

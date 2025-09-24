@@ -6,7 +6,7 @@ info:
 servers:
 - url: http://localhost:3000
   description: Dev
-- url: https://SEU-APP.onrender.com
+- url: https://mbaonrails.onrender.com
   description: Prod
 components:
   securitySchemes:
