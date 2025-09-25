@@ -5,9 +5,6 @@ class TokensController < ApplicationController
     @tokens = current_user.tokens.order(created_at: :desc)
   end
 
-  def show
-  end
-
   def create
     Token.active.update(inactivated_at: Time.now)
     @token = current_user.tokens.build(expires_at: 10.minutes.from_now)
@@ -20,8 +17,13 @@ class TokensController < ApplicationController
   end
 
   def destroy
+    @token = current_user.tokens.find(params[:id])
+
+    if @token.destroy
+      redirect_to '/tokens', notice: "Token excluído com sucesso."
+    else
+      redirect_to '/tokens', alert: "Erro ao excluir token."
+    end
   end
 
-  def new
-  end
 end

@@ -19,7 +19,9 @@
         <td><%= l(token.inactivated_at, format: :short) if token.inactivated_at.present? %></td>
         <td><%= l(token.expires_at, format: :short) if token.expires_at.present? %></td>
         <td>
-          <%= link_to "Ver", token_path(token), class: "btn btn-sm btn-outline-info" %>
+          <%= link_to "Deletar", token_path(token), 
+                                 data: { turbo_method: :delete, turbo_confirm: "Tem certeza?" }, 
+                                 class: "btn btn-sm btn-outline-danger" %>
         </td>
       </tr>
     <% end %>
